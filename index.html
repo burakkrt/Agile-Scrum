@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Agile &amp; Scrum</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3da253de-1736-48a0-9926-3b7faa9f312a" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="Agile%20&amp;%20Scrum%203da253de173648a099263b7faa9f312a/5065388.png"/></div><h1 class="page-title">Agile &amp; Scrum</h1><p class="page-description"></p></header><div class="page-body"><p id="298c110d-57e6-4ada-8f54-b579dff39c70" class="">Agile, bir yaklaşım veya felsefi bir bakış açısıyken, Scrum ise bu Agile yaklaşımını uygulamak için kullanılan özel bir metodolojidir. Yani Scrum, Agile yaklaşımının bir metodolojisidir.</p><h2 id="67bd81c7-89f4-4629-a707-7c3171377953" class="">Agile</h2><p id="c99d06cd-6b2e-43a8-86e5-87d5b7656cb3" class="">Agile, yazılım geliştirme ve proje yönetimi için genel bir felsefi yaklaşımdır. Temel amacı, esneklik, işbirliği, müşteri odaklılık ve sürekli gelişim prensiplerine dayanarak projelerin daha etkili bir şekilde yönetilmesini sağlamaktır.</p><h3 id="0fd30eff-e91c-4ba5-aa21-763746989ccc" class="">Agile Metodolojileri</h3><ol type="1" id="72ce07a4-ce6e-4ed4-b27a-ea9c4a63a09f" class="numbered-list" start="1"><li><strong>Scrum:</strong> Scrum, belirli roller, toplantılar ve kurallar içeren bir çerçeve olarak kullanılır. Projeleri belirli sürelerde yürüten &quot;sprint&quot; adı verilen dönemlerle yönetilir. Scrum, müşteri gereksinimlerine hızlı yanıt vermek ve sürekli gelişim sağlamak için kullanılır.</li></ol><ol type="1" id="b8e7e184-6d38-42d7-bf42-1374c85ccd62" class="numbered-list" start="2"><li><strong>Kanban:</strong> Kanban, görsel bir tahta (board) üzerinde iş akışını yönetmeye dayalıdır. İşler kartlarla temsil edilir ve iş kartları tahtada bir sırayla hareket eder. Bu yöntem, işlerin optimize edilmesi ve sürekli olarak akmasını sağlar.</li></ol><ol type="1" id="a9c15d83-a3ef-4cdc-85c5-037cf6abdeec" class="numbered-list" start="3"><li><strong>Extreme Programming (XP):</strong> XP, yazılım geliştirmenin bir dizi en iyi uygulama ve prensibe dayandığı bir metodolojidir. Test odaklı geliştirme, sürekli entegrasyon, müşteri ile yakın çalışma ve çift programlama gibi uygulamaları içerir.</li></ol><ol type="1" id="dbfd1e07-565e-46b7-920b-e1c4fc80bbcd" class="numbered-list" start="4"><li><strong>Lean Software Development:</strong> Lean, atıl kaynakları en aza indirgeyerek hızlı ve sürekli değer sağlama prensiplerine dayanır. Bu metodoloji, iş gereksinimlerini daha iyi anlamayı ve kaynakları optimize etmeyi vurgular.</li></ol><ol type="1" id="5d3e6b39-16e3-4796-8482-ffbf56ceb574" class="numbered-list" start="5"><li><strong>Dynamic Systems Development Method (DSDM):</strong> DSDM, yazılım projelerinin hızlı bir şekilde teslim edilmesini hedefler. Proje yaşam döngüsü boyunca belirli roller, süreçler ve prensipleri içerir.</li></ol><ol type="1" id="029c448c-4052-48ef-a2e0-7e3ac6ee664a" class="numbered-list" start="6"><li><strong>Crystal:</strong> Crystal metodolojisi, farklı proje türlerine ve boyutlarına uyum sağlamak için çeşitli &quot;renkler&quot; altında gelir. Her renk, proje türüne göre özelleştirilmiş bir yaklaşım sunar.</li></ol><ol type="1" id="a12354e3-2755-4eb2-b2a5-0ccb94e545e0" class="numbered-list" start="7"><li><strong>Feature-Driven Development (FDD):</strong> FDD, büyük ve karmaşık yazılım projelerini küçük özelliklere bölerek yönetmeyi amaçlar. Her özellik ayrı ayrı tasarlanır ve geliştirilir.</li></ol><ol type="1" id="7fda2c9a-358f-417e-8d50-5e86cb2d0f97" class="numbered-list" start="8"><li><strong>Adaptive Software Development (ASD):</strong> ASD, projelerin değişen koşullara ve gereksinimlere adapte olmasını vurgular. Sürekli olarak öğrenme ve gelişmeyi teşvik eder</li></ol><h2 id="84ab6c8a-e94e-415b-928f-2137fa1d3188" class="">Scrum Metodolojisi</h2><p id="7aab7ef1-6007-4cd5-9291-a019e2a34573" class="">Yazılım geliştirme ve proje yönetimi gibi alanlarda kullanılan bir çerçeve (framework) veya metodolojidir. Bir Agile(çevik) yazılım geliştirme yöntemidir. Scrum 1990’ların başından beri karmaşık ürün geliştirme yönetmek için kullanılan bir süreç çerçevesidir. Scrum bir süreç ya da yapı ürünleri için bir teknik değil; bunun yerine, çeşitli süreçler ve teknikler istihdam edebilir bir çerçeve olduğunu ortaya koyar.</p><h3 id="27e22ba4-6624-4b71-8fa1-af9efca7978a" class="">Scrum’ın temel üç prensibi :</h3><ul id="585715e5-a074-462d-8b88-e94ebea5505d" class="bulleted-list"><li style="list-style-type:disc"><strong>Şeffaflık:</strong> Sürecin tümleriyle geliştiriciye görünür olmasıdır.</li></ul><ul id="b9fc0e46-e65b-4270-86d3-58b86a64abca" class="bulleted-list"><li style="list-style-type:disc"><strong>Denetim:</strong> Kullanıcılarına yönelik istenmeyen sapmaları tespit etmek için sürecin ve programın sürekli denetim (Test) altında tutulması gerekir.</li></ul><ul id="7607acf7-052c-49ce-a8b9-bda7e54739d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Uyum:</strong> Yazılan programların talebe uygun olup olmaması durumudur. Herhangi bir saptama söz konusu ise bu açıklar giderilir ve talebe uyumlu hale getirilir.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="61ede46b-7cd0-46ad-871d-368da5fdb700"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Backlog :</strong> Bir projenin veya ürünün geliştirilmesi için yapılması gereken işlerin bir listesini veya toplamını ifade eder.</div></figure><h3 id="aa196cab-7002-4614-bb01-7648175e034e" class="">Scrum Takımı</h3><hr id="b7263058-278a-4bc2-9baa-369ff9c2ed2b"/><p id="5a45f8c2-bb62-46fb-a52f-57d9989da4b9" class="">Ürün Sahibi, Geliştirme Ekibi ve Scrum Master’dan oluşur. Takım kendi kendini örgütler. Böylece kendi içerisinde uyum içinde olan takımlar daha başarılı sonuçlar alırlar.  Scrum’ın takım modeli esneklik, yaratıcılık ve verimliliği optimize etmek için tasarlanmıştır.</p><p id="ebf43206-7f69-42e7-ac41-5e9eb6354b78" class=""><strong>Ürün Sahibi (Product Owner)</strong></p><ul id="07855729-04f1-4d5f-b4b9-6ef9ebf17233" class="bulleted-list"><li style="list-style-type:disc">Ürünü satın alan kişiler ve ürünü gerçekleştirecek kişiler yani geliştirme ekibi ile kontak kurar.</li></ul><ul id="51d15aea-4909-49dc-a0b6-b9f6d6705bc2" class="bulleted-list"><li style="list-style-type:disc">Ürünün değerinden ve geri kaydından (Backlog) sorumlu olan kişidir.</li></ul><ul id="a0c505ec-47ff-4aa1-b139-aab26e7e91ec" class="bulleted-list"><li style="list-style-type:disc">Sorumluluğun büyük bir kısmı Product Owner’dadır. </li></ul><ul id="721d07e2-eeb8-4b4d-9f19-ed6680704f68" class="bulleted-list"><li style="list-style-type:disc">Takımda Product Owner tektir. </li></ul><ul id="0d3e0743-edf3-472e-9bc7-46e050586a25" class="bulleted-list"><li style="list-style-type:disc">Product Owner’in başarılı olması için, tüm organizasyonun kendi kararlarına saygı göstermesi gerekir. </li></ul><ul id="d72a6103-7549-49d6-bf12-a412c6e5ccae" class="bulleted-list"><li style="list-style-type:disc">Geliştirme Ekibi, Product Owner’in kararlarına göre hareket eder.</li></ul><p id="a677a335-a109-404e-b9c7-ad420579541a" class=""><strong>Geliştirme Ekibi (The Development Team)</strong></p><ul id="6236490c-c57b-4d34-8968-0d8b99dff03e" class="bulleted-list"><li style="list-style-type:disc">Geliştirme ekibi kendi kendine organize olmalıdır. </li></ul><ul id="bfbb5483-82b5-4e55-b6bd-1d8354e413f4" class="bulleted-list"><li style="list-style-type:disc">Bu ekip Ürün sahibinin vizyonunu alıp gerçeğe dönüştürecektir</li></ul><ul id="fc5a1de9-a0ee-4f77-bbe6-02f61c376cfd" class="bulleted-list"><li style="list-style-type:disc">Ekipte bireysel özel beceriler olabilir. Ancak her şey bir bütün olarak ekibe aittir. </li></ul><ul id="e304814f-7cb6-49bc-8f38-30ce7bd2129e" class="bulleted-list"><li style="list-style-type:disc">Ekibin önemli işleri tamamlayabilmesi için gerekli kadro sayısına sahip olması gerekmektedir.</li></ul><ul id="38d17169-6967-4ed5-87bb-1a3dd9cf55a0" class="bulleted-list"><li style="list-style-type:disc">Ekipler küçük olmalıdır ve önerilen <strong>3</strong> ila <strong>9</strong> kişi aralığındadır.</li></ul><ul id="5c5935c8-f46b-4f38-b2ec-4cd6ed53dda7" class="bulleted-list"><li style="list-style-type:disc">Unutulmamalı ki, Product Owner bu sayıya dahil değildir.</li></ul><p id="80b5c331-76cf-409c-ae9b-f38b0c648bd1" class=""><strong>Scrum Ustası(The Scrum Master)</strong></p><ul id="d33406fc-e368-4409-8cc8-8cb8a239f28f" class="bulleted-list"><li style="list-style-type:disc">Scrum’dan sorumlu olan kişidir.</li></ul><ul id="6d143ecb-95e7-4f1e-a844-91c080bf799e" class="bulleted-list"><li style="list-style-type:disc">Scrum Master, Scrum Takım teorisi ve uygulamaları kurallara uyarak sağlar.</li></ul><ul id="5cd2c77b-8ead-4146-b39b-00c054e80f66" class="bulleted-list"><li style="list-style-type:disc">Scrum Master takım için liderdir.</li></ul><ul id="4014ae5d-7d02-4204-9dec-4ca61d4e630b" class="bulleted-list"><li style="list-style-type:disc">Scrum Master, ekip tarafından yaratılan değeri maksimize etmek için çalışır.</li></ul><ul id="7b50a128-58e4-4237-9572-f3d39100882f" class="bulleted-list"><li style="list-style-type:disc">Scrum Master şunları yapmalıdır ;<ul id="c41791f4-24bd-4784-9ab7-0accf141b0f3" class="bulleted-list"><li style="list-style-type:circle">Ürün Backlog yönetimi bulma teknikleri.</li></ul><ul id="6dcb4b1c-e553-4494-8195-699594c08f22" class="bulleted-list"><li style="list-style-type:circle">Anlaşılabilir bir ortamda uzun vadeli ürün planlamaları yapmak.</li></ul><ul id="9c5866bc-12bf-4538-bc41-c5daecb1b890" class="bulleted-list"><li style="list-style-type:circle">Örgütlenmeye (ekip) koçluk eder.</li></ul><ul id="f37e7ced-320a-4e19-acc8-767797a3c942" class="bulleted-list"><li style="list-style-type:circle">Geliştirme ekibi için değeri yüksek ürünler oluşturmak.</li></ul><ul id="6d032229-3383-46ae-bea7-383dc7873c3e" class="bulleted-list"><li style="list-style-type:circle">Geliştirme ekibinin ilerlemesine engel olacak şeyleri ortadan kaldırmak.</li></ul><ul id="205fd1cc-213b-4d87-8423-c115be86f190" class="bulleted-list"><li style="list-style-type:circle">Talebe göre Scrum olaylarının kolaylaştırılması.</li></ul><ul id="8ebbcf1d-9902-482b-bc07-2693b38bba79" class="bulleted-list"><li style="list-style-type:circle">Scrum’ın belirlenmesinde koçluk eder.</li></ul><ul id="d7ef383a-a223-4d58-aec3-fbaf8f4a7fd4" class="bulleted-list"><li style="list-style-type:circle">Örgüt içinde planlama yapar.</li></ul><ul id="d7b8f0b0-3794-423a-a87f-961e7d5185c4" class="bulleted-list"><li style="list-style-type:circle">Takımın verimliliğini arttırır.</li></ul></li></ul><h3 id="6b7407bf-17ac-44f5-8da9-196882bbafd3" class="">Scrum Çalışma Yöntemi</h3><hr id="806888e1-8d4b-4f47-b550-92571c261679"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e5faa258-b5d0-46e1-9d1a-cb2f4a6e994e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>İterasyon :</strong> İşlemlerin belirli bir plan veya hedef doğrultusunda gerçekleştirilmesidir. Projenin küçük adımlar halinde bölünmesi, her adımın tamamlanması, test edilmesi ve sonuçların analiz edilmesi ile ilerler.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0bb2de1c-8e23-487a-8288-1899cf7b5c57"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Faz</strong> : Projenin ayrı ayrı ele alınan aşamalara bölünmesi ve her bir aşama tamamlandığında sonraki aşamaya geçilmesi yaklaşımıdır.</div></figure><h3 id="49cd8c39-42dc-451b-a242-72aacc916908" class="">Sprint</h3><p id="ff0c1454-acbd-4431-a596-1f2cae2756cb" class="">Scrum çerçevesinde her bir iterasyon Sprint olarak isimlendirilmektedir. Sprintleri paketlenmiş zaman aralıkları olarak düşünebilirsiniz. </p><ul id="868ea6e2-e2ee-4a4d-bdbd-e6bb03e8a910" class="bulleted-list"><li style="list-style-type:disc">Yeni Sprint önceki Sprint sonucundan hemen sonra başlar.</li></ul><ul id="66aca188-d123-460b-9b9b-9b9b802ba87b" class="bulleted-list"><li style="list-style-type:disc">Sprint süresi en az <strong>7 gün</strong> en fazla <strong>30 gün</strong> olmalıdır.</li></ul><ul id="a0c028a7-4dd8-49e5-88ac-eeaf270628df" class="bulleted-list"><li style="list-style-type:disc">Sprintlerimiz başlangıç ve bitiş tarihleri bulunmaktadır ve ekibin hızını ayarlamak için her bir sprintin aynı sürede tutulması önerilmektedir.</li></ul><ul id="83480ac1-5173-47a5-9821-6db3efaa766a" class="bulleted-list"><li style="list-style-type:disc">Scrum yöntemi ile yönetilen projeler ‘sprint’ denilen <strong>fazlara</strong> ayrılır.</li></ul><ul id="b9b1d42b-dde9-40c1-a84d-4f4c2e84f981" class="bulleted-list"><li style="list-style-type:disc">Proje takımı (Scrum Team), proje yöneticisi (Scrum Master) ile her sprint başlangıcında masaya oturarak yeni ‘sprint’ dahilinde geliştirilecek özellik ve fonksiyonları belirler. Bu süreçte seçilen fonksiyon ve özellikler daha önceden oluşturulmuş ve sürekli güncellenen <strong>Product Backlog</strong> listesindeki sıra ile en öncelikli olanlardır. Seçilen özellik ve fonksiyonlar <strong>Sprint Backlog</strong> denilen ikinci bir listeye aktarılır.</li></ul><ul id="a9c8f8ae-0e87-4175-9fe2-6b9c2bafcf1d" class="bulleted-list"><li style="list-style-type:disc">Hiçbir zaman önceliği düşük bir özellik veya fonksiyon önceliği yüksek bir özellik veya fonksiyondan önce geliştirilemez.</li></ul><ul id="ed37e1d8-88e2-490f-880b-bce853166368" class="bulleted-list"><li style="list-style-type:disc">Proje takımı bir sonraki sprint başlangıcına kadar bir daha Product Backlog’a bakmaz, o sprint dahilinde sadece ilgili Sprint Backlog listesine odaklanır.</li></ul><ul id="65f98843-3841-45f5-82e2-5822127166cf" class="bulleted-list"><li style="list-style-type:disc">Sprintin zamanı dolmadan sprint iptal edilebilir. Sadece Product Owner sprinti iptal etme yetkisine sahiptir.</li></ul><p id="734b5f5a-8bd3-42ce-98f3-f992ce6d17a2" class=""><strong>Günlük Toplantı (Daily)</strong></p><p id="7e178cdd-e9fb-4303-a4b7-640082d17dd0" class="">Scrum ‘da hergün ekip toplantısı gerçekleştirilir ve toplantıda ;</p><ol type="1" id="5a079bc1-644d-4ddb-82a6-21c0b41643df" class="numbered-list" start="1"><li>Ekibin Sprint’ i tamamlamasına yardım etmek için dün ne yaptın?</li></ol><ol type="1" id="e32553f6-de28-4f64-b1b3-1466c4f4864c" class="numbered-list" start="2"><li>Ekibin Sprint’ i tamamlamasına yardım etmek için bu gün ne yapacaksın?</li></ol><ol type="1" id="5e0ecc0a-395b-4da2-9e69-9b849cada525" class="numbered-list" start="3"><li>Ekibin önünde hangi engeller mevcut?</li></ol><p id="229ebfe4-106b-49d4-a9b1-be88befb05e5" class="">soruları yöneltilir ve her bir ekip üyesi kendine göre bu soruları yanıtlar.</p><ul id="88231ce6-53c0-48bf-b116-07737fb0c468" class="bulleted-list"><li style="list-style-type:disc">Toplantı <strong>her gün aynı saatte</strong> icra edildiği sürece hangi saatte olduğu önemli değildir, amaç ekibe düzenli bir kalp atışı sağlamaktır.</li></ul><ul id="ff70a91b-9651-4603-8987-f1396991b6a9" class="bulleted-list"><li style="list-style-type:disc">Toplantı <strong>15 dakikadan</strong> daha uzun olamaz. Eğer bir konuda daha fazla tartışmaya ihtiyaç duyulursa o konu not alınır ve toplantıdan sonra görüşülür.</li></ul><p id="3fbe390f-15c3-4038-9db3-cc361085c81f" class="">En sık yaşanan sorun insanların bu toplantıları basit bireysel raporlama faaliyeti olarak
+görmesidir. Cümleler genellikle “Bunu yaptım…Bunu yapacağım” şeklindedir.</p><h3 id="a854ab25-4655-40e1-8abf-f0fe314ef126" class="">Scrum ‘da Planlama</h3><hr id="77a33a3b-7490-4f4f-8c2c-70c0638fb7cf"/><p id="f310ca30-7c79-4ac8-ae27-ae6f9ae224bc" class="">Mevcut sprint ‘de yapılacak işler açıklanır ve kişilere dağıtılır, kişiler bu işlerin tahmini <strong>çaba miktarına </strong>göre <strong>Fibonacci dizisindeki sayılar olan 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...</strong> e göre işlere puan verir.</p><p id="c87344c6-a412-4d58-8dbf-1aa9c164998e" class="">Sprint sonunda tamamlanan işlerin puanları toplanır ve bu takıma işlerin hızını gösterir.</p><p id="d25d9c4f-8d5b-4b07-a2e6-6c62b23162db" class="">Puanlamayı geliştirme takımı yani görevi üstlenecek kişilerin yapması sağlıklıdır.</p><h3 id="23dab578-65e6-4ace-a4fc-46ac37cdec94" class="">Scrum ‘da Ürünü Piyasaya Sürme</h3><hr id="10d2c0a6-22c5-4466-aca6-17f5a7ab2787"/><p id="7e7ddfc0-7132-4293-8472-26672443b5dd" class="">Scrum ‘da özelliklerin henüz yüzde 20 ‘si tamamlanmadan kullanıcılar ile buluşturulması önerilir. Kullanıcılar ile buluşturulan bu ürüne MVP (Minimum Viable Product) Türkçe ‘de “En Küçük Geçerli Ürün” denir.</p><p id="5b2253ca-cff9-4c81-986a-d3e62f8386a9" class="">Ürün gerekli temel fonksiyonları içerir ve temel amacını en basit şekilde gerçekleştirebilir. Örneğin bu ürün bir fotoğraf makinesidir ve sadece resim çekebiliyordur, henüz odaklama, zoom, filtre vb. özellikleri eklenmemiştir.</p><p id="66084341-1b7d-4b2b-a1f4-bc255072d50e" class="">Piyasaya sürülen üründe kullanıcılar bir sonraki adımda gerekli şeyin ne olduğunu belirleyecektir.</p><p id="4137262a-b0fc-42c3-92d7-d08866ad57f1" class="">Bir sonraki adımda ise onların da yüzde 20 ‘si gerçekleştirilir ve piyasaya sürülür.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
